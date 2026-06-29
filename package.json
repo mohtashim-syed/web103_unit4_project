@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "concurrently \"cd client && vite\" \"cd server && nodemon server\"",
     "start": "cd server && node server",
+    "reset": "cd server && node config/reset.js",
     "build": "cd client && vite build"
   },
   "dependencies": {

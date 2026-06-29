@@ -5,8 +5,170 @@
     background-position: center;
     background-attachment: fixed;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
     padding-bottom: 50px;
 }
+
+.page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+}
+
+.page-title {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1.5rem;
+}
+
+/* ---- builder layout (Create / Edit / Details) ---- */
+.builder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 760px) {
+    .builder { grid-template-columns: 1fr; }
+}
+
+.builder-preview,
+.builder-form,
+.details-panel {
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.builder-preview {
+    position: sticky;
+    top: 1rem;
+    text-align: center;
+}
+
+.builder-price {
+    margin-top: 0.5rem;
+    color: #1b6ca8;
+}
+
+.builder-status,
+.warn,
+.error {
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ---- feature option pickers ---- */
+.feature-group {
+    border: none;
+    padding: 0;
+    margin-bottom: 1.25rem;
+}
+
+.feature-group legend {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.option-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.85rem;
+    width: auto;
+    color: #222;
+}
+
+.option-btn.selected {
+    border-color: #1b6ca8;
+    background: #e8f3fb;
+    font-weight: 700;
+}
+
+.option-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.option-price { color: #1b6ca8; font-weight: 700; }
+
+.swatch,
+.card-swatch {
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #888;
+}
+
+.swatch { width: 16px; height: 16px; }
+
+.submit-btn { margin-top: 0.5rem; }
+
+.warn {
+    background: rgba(212, 38, 61, 0.85);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+}
+
+.error {
+    background: rgba(150, 0, 0, 0.85);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+}
+
+/* ---- car list ---- */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.car-card {
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.card-swatch { width: 36px; height: 36px; }
+
+.card-specs { font-size: 0.8rem; color: #555; margin: 0; }
+.card-price { font-weight: 700; color: #1b6ca8; font-size: 1.2rem; margin: 0; }
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.card-actions button,
+.card-actions a {
+    width: auto;
+    padding: 0.4rem 0.9rem;
+    margin: 0;
+}
+
+.card-actions .danger { background: #d7263d; border-color: #d7263d; }
+
+/* ---- spec table on details page ---- */
+.spec-table { width: 100%; margin-bottom: 1rem; }
+.spec-table th { text-align: left; width: 40%; }
